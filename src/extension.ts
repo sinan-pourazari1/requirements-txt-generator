@@ -17,9 +17,10 @@ export function deactivate() {
 
 async function generateRequirementsTxt() {
     const terminal = vscode.window.createTerminal('requirements-txt-generator');
-    terminal.sendText("pipreqs --force");
+	terminal.sendText("pip install pipreqsnb")
+    terminal.sendText("pipreqsnb --force");
     vscode.window.showInformationMessage('Generating requirements.txt using pipreqs...');
-	await new Promise(resolve => setTimeout(resolve, 3000));
+	await new Promise(resolve => setTimeout(resolve, 5000));
 	terminal.hide();
 	terminal.dispose();
 }
