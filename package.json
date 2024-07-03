@@ -1,0 +1,40 @@
+{
+  "name": "requirements-txt-generator",
+  "displayName": "Requirements.txt Generator",
+  "description": "Automatically updates the requirements.txt file using pipreqs",
+  "version": "0.0.1",
+  "publisher": "your-publisher-name",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:python",
+    "onSave:python"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "requirements-txt-generator.generate",
+        "title": "Generate requirements.txt"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "package": "webpack --mode production --devtool hidden-source-map"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.5",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.92.1",
+    "webpack-cli": "^5.1.4",
+    "@types/cacheable-request": "^6.0.1"
+  }
+}
